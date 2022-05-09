@@ -23,14 +23,14 @@ class PeopleProcessor {
 	PeopleSetup people;
 	static Map<String, List<String>> lastnamesByFirstname(List<Person> people){
 
-		Map<String, List<String>> test = new HashMap<String, List<String>>();
+		Map<String, List<String>> test = new HashMap<>();
 		for(Person person: people) {
-			String mapKey = ((Person) person).getFirstName();
+			String mapKey = (person).getFirstName();
 
 			if (!test.containsKey(mapKey)) {
 				test.put(mapKey,new ArrayList<String>());
 			}
-			test.get(mapKey).add(((Person) person).getLastName());
+			test.get(mapKey).add(person.getLastName());
 		}
 		return test;
 	}
@@ -49,17 +49,15 @@ class PeopleProcessor {
 	 *
 	 */
 	static Map<String, List<String>> firstnamesByLastname(List<Person> people){
-		Map<String, List<String>> test = new HashMap<String, List<String>>();
+		Map<String, List<String>> test = new HashMap<>();
 		for(Person person: people) {
-			String mapKey = ((Person) person).getLastName();
+			String mapKey = person.getLastName();
 
 			if (!test.containsKey(mapKey)) {
-				test.put(mapKey,new ArrayList<String>());
+				test.put(mapKey,new ArrayList<>());
 			}
-			test.get(mapKey).add(((Person) person).getFirstName());
+			test.get(mapKey).add (person.getFirstName());
 		}
-
 		return test;
 	}
-
 }
