@@ -28,7 +28,7 @@ class PeopleProcessor {
 			String mapKey = (person).getFirstName();
 
 			if (!test.containsKey(mapKey)) {
-				test.put(mapKey,new ArrayList<String>());
+				test.put(mapKey,new ArrayList<>());
 			}
 			test.get(mapKey).add(person.getLastName());
 		}
